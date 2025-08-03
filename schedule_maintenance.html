@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Schedule Maintenance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+        url('https://png.pngtree.com/thumb_back/fh260/background/20230411/pngtree-old-mine-tunnel-mining-cave-photo-image_2298268.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      width: 90%;
+      max-width: 450px;
+    }
+
+    form h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #ddd;
+    }
+
+    select {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    input[type="submit"] {
+      background-color: #1abc9c;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #16a085;
+      transform: scale(1.02);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    @media (max-width: 500px) {
+      form {
+        padding: 30px 20px;
+      }
+
+      form h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="php/schedule_maintenance.php" method="post">
+    <h2><i class="fas fa-calendar-plus"></i> Schedule Maintenance</h2>
+    <input type="number" name="equipment_id" placeholder="Equipment ID" required>
+    <input type="date" name="service_date" required>
+    <textarea name="notes" placeholder="Maintenance Notes..."></textarea>
+    <select name="status" required>
+      <option value="Pending">Pending</option>
+      <option value="Completed">Completed</option>
+    </select>
+    <input type="submit" value="Schedule Maintenance">
+  </form>
+</body>
+</html>
