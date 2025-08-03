@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Equipment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230411/pngtree-old-mine-tunnel-mining-cave-photo-image_2298268.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: #fff;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: #f1c40f;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    input[type="number"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #f1c40f;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #f39c12;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #d35400;
+    }
+
+    @media (max-width: 500px) {
+      form {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="php/add_equipment.php" method="post">
+    <h2>Add New Equipment</h2>
+    <input type="text" name="type" placeholder="Type" required>
+    <input type="text" name="brand" placeholder="Brand" required>
+    <input type="date" name="purchase_date" required>
+    <input type="number" name="hours_used" placeholder="Hours Used" required>
+    <input type="submit" value="Add Equipment">
+  </form>
+</body>
+</html>
